@@ -6,9 +6,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 
-public class ItemCoin extends Item implements IModeledItem {
+public class ItemBase extends Item implements IModeledItem {
 
-    public ItemCoin(String name) {
+    public ItemBase(String name) {
         super();
         setUnlocalizedName(name);
         System.out.println("crap---- " + JustCoins.MODID + ":" + name);
