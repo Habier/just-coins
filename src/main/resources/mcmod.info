@@ -1,0 +1,16 @@
+[
+{
+  "modid": "justcoins",
+  "name": "Just Coins",
+  "description": "Adds non-survival crafteable coins",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Habier", "Reus_"],
+  "credits": "The Forge & FML guys, and Team Roots whose gitHub gave me hints of how to code this.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
