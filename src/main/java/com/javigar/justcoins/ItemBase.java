@@ -1,6 +1,6 @@
 package com.javigar.justcoins;
 
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraft.item.Item;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -13,7 +13,7 @@ public class ItemBase extends Item implements IModeledItem {
         setUnlocalizedName(name);
         setRegistryName(JustCoins.MODID + ":" + name);
         setCreativeTab(CreativeTabs.MISC);
-        GameRegistry.register(this);
+        ForgeRegistries.ITEMS.register(this);
     }
 
     @Override

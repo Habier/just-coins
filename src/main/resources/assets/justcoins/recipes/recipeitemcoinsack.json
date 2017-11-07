@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "justcoins:coin_sack"
+  },
+  "pattern": [
+    "ccc",
+    "ccc",
+    "ccc"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "c": {
+      "item": "justcoins:gold_coin"
+    }
+  },
+  "group": "justcois"
+}
