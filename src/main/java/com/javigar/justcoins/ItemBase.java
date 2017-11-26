@@ -10,9 +10,9 @@ public class ItemBase extends Item implements IModeledItem {
 
     public ItemBase(String name) {
         super();
-        setUnlocalizedName(name);
-        setRegistryName(JustCoins.MODID + ":" + name);
-        setCreativeTab(CreativeTabs.MISC);
+        this.setUnlocalizedName(name);
+        this.setRegistryName(JustCoins.MODID + ":" + name);
+        this.setCreativeTab(CreativeTabs.MISC);
         GameRegistry.register(this);
     }
 
