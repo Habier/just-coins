@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = JustCoins.MODID, version = JustCoins.VERSION)
 public class JustCoins {
     public static final String MODID = "justcoins";
-    public static final String VERSION = "1.1.1";
+    public static final String VERSION = "1.1.2";
 
 
     public static Item copperCoin;
