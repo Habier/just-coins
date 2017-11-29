@@ -6,12 +6,14 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 
 @Mod(modid = JustCoins.MODID, version = JustCoins.VERSION)
 public class JustCoins {
     public static final String MODID = "justcoins";
-    public static final String VERSION = "1.1.2";
+    public static final String VERSION = "1.1.3";
 
 
     public static Item copperCoin;
@@ -27,12 +29,17 @@ public class JustCoins {
         goldCoin = new ItemBase("gold_coin");
         coinSack = new ItemBase("coin_sack");
 
+        if (event.getSide() == Side.CLIENT)
+            modelInits();
+
+    }
+
+    @SideOnly(Side.CLIENT)
+    private void modelInits() {
         ((IModeledItem) copperCoin).initModel();
         ((IModeledItem) silverCoin).initModel();
         ((IModeledItem) goldCoin).initModel();
         ((IModeledItem) coinSack).initModel();
-
-
     }
 
     @EventHandler
