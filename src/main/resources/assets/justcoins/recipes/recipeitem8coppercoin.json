@@ -1,0 +1,13 @@
+{
+  "result": {
+    "item": "justcoins:copper_coin",
+    "count": 8
+  },
+  "ingredients": [
+    {
+      "item": "justcoins:silver_coin"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "group": "justcois"
+}

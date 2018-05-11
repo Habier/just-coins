@@ -1,0 +1,33 @@
+{
+  "result": {
+    "item": "justcoins:silver_coin"
+  },
+  "ingredients": [
+    {
+      "item": "justcoins:copper_coin"
+    },
+    {
+      "item": "justcoins:copper_coin"
+    },
+    {
+      "item": "justcoins:copper_coin"
+    },
+    {
+      "item": "justcoins:copper_coin"
+    },
+    {
+      "item": "justcoins:copper_coin"
+    },
+    {
+      "item": "justcoins:copper_coin"
+    },
+    {
+      "item": "justcoins:copper_coin"
+    },
+    {
+      "item": "justcoins:copper_coin"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "group": "justcois"
+}
