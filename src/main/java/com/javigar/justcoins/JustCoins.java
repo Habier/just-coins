@@ -48,12 +48,12 @@ public class JustCoins {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        registerEntity(CoinEntity.class, "indestructible_coin");
+        // registerEntity(CoinEntity.class, "indestructible_coin");
     }
-
+/*
     private void registerEntity(Class<? extends Entity> entity, String name) {
         EntityRegistry.registerModEntity(new ResourceLocation(MODID, name), entity, name,
                 0, this, 128, 3, true);
     }
-
+*/
 }
