@@ -5,7 +5,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
-import javax.annotation.Nonnull;
 
 public class CoinEntity extends EntityItem {
 
@@ -20,8 +19,8 @@ public class CoinEntity extends EntityItem {
     }
 
     @Override
-    public boolean attackEntityFrom(@Nonnull DamageSource source, float amount) {
-         if(source.getDamageType().equals(DamageSource.OUT_OF_WORLD.damageType)) {
+    public boolean attackEntityFrom(DamageSource source, float amount) {
+        if (source.getDamageType().equals(DamageSource.OUT_OF_WORLD.damageType)) {
             return true;
         }
         return false;

@@ -14,6 +14,7 @@ import java.util.List;
 
 public class CoinCommand extends CommandBase {
     private static List<String> values = Arrays.asList("copper", "silver", "gold", "sack");
+    private static String usage = "/coin <Player> <copper|silver|gold|sack> [quantity]";
 
     /**
      * Gets the name of the command
@@ -28,7 +29,7 @@ public class CoinCommand extends CommandBase {
      */
     @Override
     public String getUsage(ICommandSender icommandsender) {
-        return "/coin <Player> <copper|silver|gold|sack> [quantity]";
+        return usage;
     }
 
     /**
@@ -45,13 +46,34 @@ public class CoinCommand extends CommandBase {
     @Override
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
         if (args.length < 2) {
-            throw new WrongUsageException("commands.coin.usage");
+            throw new WrongUsageException(usage);
         } else {
             EntityPlayer entityplayer = getPlayer(server, sender, args[0]);
-            Item item = getItemByText(sender, "justcoins:" + args[1] + "_coin");
+            Item item;
+
+            switch (args[1]) {
+                case "copper":
+                    item = JustCoins.copperCoin;
+                    break;
+
+                case "silver":
+                    item = JustCoins.silverCoin;
+                    break;
+
+                case "gold":
+                    item = JustCoins.goldCoin;
+                    break;
+
+                case "sack":
+                    item = JustCoins.coinSack;
+                    break;
+
+                default:
+                    throw new WrongUsageException(usage);
+            }
+
             int i = args.length >= 3 ? parseInt(args[2], 1, item.getItemStackLimit()) : 1;
-            int j = args.length >= 4 ? parseInt(args[3]) : 0;
-            ItemStack itemstack = new ItemStack(item, i, j);
+            ItemStack itemstack = new ItemStack(item, i);
 
             ItemHandlerHelper.giveItemToPlayer(entityplayer, itemstack, -1);
 
