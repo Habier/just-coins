@@ -14,7 +14,7 @@ import java.util.List;
 
 public class CoinCommand extends CommandBase {
     private static List<String> values = Arrays.asList("copper", "silver", "gold", "sack");
-    private static String usage = "/coin <Player> <copper|silver|gold|sack> [quantity]";
+    private static String usage = "commands.coin.usage";
 
     /**
      * Gets the name of the command
@@ -72,12 +72,17 @@ public class CoinCommand extends CommandBase {
                     throw new WrongUsageException(usage);
             }
 
-            int i = args.length >= 3 ? parseInt(args[2], 1, item.getItemStackLimit()) : 1;
-            ItemStack itemstack = new ItemStack(item, i);
+            int maxSize = item.getItemStackLimit();
+            int qty = args.length >= 3 ? parseInt(args[2], 1) : 1;
+            int i = qty;
 
+            for (; i > maxSize; i -= maxSize) {
+                ItemHandlerHelper.giveItemToPlayer(entityplayer, new ItemStack(item, maxSize), -1);
+            }
+            ItemStack itemstack = new ItemStack(item, i);
             ItemHandlerHelper.giveItemToPlayer(entityplayer, itemstack, -1);
 
-            //notifyCommandListener(sender, this, "commands.coin.success", new Object[]{itemstack.getTextComponent(), i, entityplayer.getName()});
+            notifyCommandListener(sender, this, "commands.coin.success", new Object[]{itemstack.getTextComponent(), i, entityplayer.getName()});
         }
     }
 
